@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import BooksList from './components/containers/BooksList';
 import CategoriesList from './components/containers/CategoriesList';
+import AddNewBookForm from './components/forms/AddNewBookForm';
 
 const App = () => (
   <>
@@ -11,6 +12,7 @@ const App = () => (
       <Route path="/" element={<BooksList />} />
       <Route path="/categories" element={<CategoriesList />} />
     </Routes>
+    <AddNewBookForm />
   </>
 );
 
