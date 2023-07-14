@@ -1,4 +1,7 @@
+@import 'variables/_colors.scss';
+@import 'components/utils/PercentageRing.scss';
+
 body {
-  background-color: #fff;
-  color: #000;
+  background-color: $off-white;
+  color: $off-black;
 }
