@@ -8,13 +8,25 @@ const BookItem = ({ book }) => (
       <h2>{book.title}</h2>
       <span>Author</span>
       <div className="book-item__actions">
-        <button id={book.id} type="button">
+        <button
+          id={book.id}
+          type="button"
+          className="btn btn-link text-decoration-none"
+        >
           Comments
         </button>
-        <button id={book.id} type="button">
+        <button
+          id={book.id}
+          type="button"
+          className="btn btn-link text-decoration-none"
+        >
           Remove
         </button>
-        <button id={book.id} type="button">
+        <button
+          id={book.id}
+          type="button"
+          className="btn btn-link text-decoration-none"
+        >
           Edit
         </button>
       </div>
@@ -25,7 +37,7 @@ const BookItem = ({ book }) => (
     <div className="book-item__chapter">
       <span>CURRENT CHAPTER</span>
       <h3>{book.chapter}</h3>
-      <button id={book.id} type="button">
+      <button id={book.id} type="button" className="btn btn-primary">
         UPDATE PROGRESS
       </button>
     </div>
