@@ -11,7 +11,7 @@ const AddNewBookForm = () => {
       title: bookTitle.current.value,
       category: bookCategory.current.value,
       chapter: 'Chapter #',
-      percentage: '10',
+      percentage: 10,
     };
     // ! should do something else with `book`? ===> remove comment when ready
     return book;
@@ -21,14 +21,23 @@ const AddNewBookForm = () => {
     <div className="container p-2">
       <h2>Add New Book</h2>
       <form className="d-flex">
-        <input type="text" placeholder="Book title" className="form-control" />
-        <select>
+        <input
+          type="text"
+          placeholder="Book title"
+          className="form-control"
+          ref={bookTitle}
+        />
+        <select className="form-select" ref={bookCategory}>
           <option disabled selected>
             Category
           </option>
           {/* more options */}
         </select>
-        <button type="submit" className="btn-primary" onClick={handleSubmit}>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={handleSubmit}
+        >
           Add book
         </button>
       </form>
