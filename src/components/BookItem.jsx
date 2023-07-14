@@ -6,7 +6,7 @@ const BookItem = ({ book }) => (
     <div className="book-item__info">
       <span>{book.category}</span>
       <h2>{book.title}</h2>
-      <span>Author</span>
+      <span>{book.author}</span>
       <div className="book-item__actions">
         <button
           id={book.id}
@@ -49,6 +49,7 @@ BookItem.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
     chapter: PropTypes.string.isRequired,
     percentage: PropTypes.number.isRequired,
   }).isRequired,
