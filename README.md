@@ -44,6 +44,8 @@
 
 - Use React Router.
 - Use React components.
+- Use Redux.
+- Use Hooks.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -87,9 +89,9 @@
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://iturres.github.io/Task-Manager/dist/) -->
+- Soon available
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,7 +129,7 @@ Install this project's dependencies with:
 To run the project, execute the following command:
 
 ```bash
- npm run start
+ npm start
 ```
 
 Runs the app in the development mode.\
@@ -167,7 +169,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **future features 1**
+- [ ] **CRUD**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
