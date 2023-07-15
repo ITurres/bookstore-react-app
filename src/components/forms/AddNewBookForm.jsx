@@ -2,14 +2,14 @@ import React, { useRef } from 'react';
 
 const AddNewBookForm = () => {
   const bookTitle = useRef(null);
-  const bookCategory = useRef(null);
+  const bookAuthor = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const book = {
       item_id: crypto.randomUUID(),
       title: bookTitle.current.value,
-      category: bookCategory.current.value,
+      author: bookAuthor.current.value,
       chapter: 'Chapter #',
       percentage: 10,
     };
@@ -27,12 +27,7 @@ const AddNewBookForm = () => {
           className="form-control"
           ref={bookTitle}
         />
-        <select className="form-select" ref={bookCategory}>
-          <option disabled selected>
-            Category
-          </option>
-          {/* more options */}
-        </select>
+        <input className="form-control" ref={bookAuthor} />
         <button
           type="submit"
           className="btn btn-primary"
