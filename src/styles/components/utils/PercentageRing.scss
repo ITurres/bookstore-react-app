@@ -1,0 +1,16 @@
+@import '../../variables/colors.scss';
+
+.ring-bg {
+  fill: none;
+  stroke: $light-gray;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: $light-blue;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-origin: center center;
+  transition: transform 0.5s;
+  transform: rotate(-90deg);
+}
