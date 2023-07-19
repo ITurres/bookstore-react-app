@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import PercentageRing from './utils/PercentageRing';
+import { removeBook } from '../redux/books/booksSlice';
 
 const BookItem = ({ book }) => {
   const percentageRead = Math.round((book.pagesRead / book.totalPages) * 100);
+  const dispatch = useDispatch();
 
   return (
     <div className="book-item">
@@ -22,6 +25,7 @@ const BookItem = ({ book }) => {
             id={book.item_id}
             type="button"
             className="btn btn-link text-decoration-none"
+            onClick={() => dispatch(removeBook(book.item_id))}
           >
             Remove
           </button>
