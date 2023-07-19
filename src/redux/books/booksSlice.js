@@ -1,10 +1,37 @@
-import createSlice from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  books: [
+    {
+      item_id: 'item1',
+      title: 'The Great Gatsby',
+      author: 'John Smith',
+      category: 'Fiction',
+      totalPages: 200,
+      currentPage: 50,
+    },
+    {
+      item_id: 'item2',
+      title: 'Anna Karenina',
+      author: 'Leo Tolstoy',
+      category: 'Fiction',
+      totalPages: 450,
+      currentPage: 23,
+    },
+    {
+      item_id: 'item3',
+      title: 'The Selfish Gene',
+      author: 'Richard Dawkins',
+      category: 'Nonfiction',
+      totalPages: 500,
+      currentPage: 145,
+    },
+  ],
+};
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState: {
-    books: [],
-  },
+  initialState,
   reducers: {
     addBook: (state, action) => {
       const newBook = action.payload;
@@ -12,7 +39,7 @@ const booksSlice = createSlice({
     },
     removeBook: (state, action) => {
       const bookId = action.payload;
-      state.books = state.books.filter((book) => book.id !== bookId);
+      state.books = state.books.filter((book) => book.item_id !== bookId);
     },
   },
 });
