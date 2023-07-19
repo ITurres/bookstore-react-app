@@ -39,7 +39,7 @@ const booksSlice = createSlice({
     },
     removeBook: (state, action) => {
       const bookId = action.payload;
-      state.books = state.books.filter((book) => book.id !== bookId);
+      state.books = state.books.filter((book) => book.item_id !== bookId);
     },
   },
 });
