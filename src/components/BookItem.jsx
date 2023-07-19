@@ -4,7 +4,7 @@ import PercentageRing from './utils/PercentageRing';
 import { removeBook } from '../redux/books/booksSlice';
 
 const BookItem = ({ book }) => {
-  const percentageRead = Math.round((book.pagesRead / book.totalPages) * 100);
+  const percentageRead = Math.round((book.currentPage / book.totalPages) * 100);
   const dispatch = useDispatch();
 
   return (
@@ -59,7 +59,7 @@ BookItem.propTypes = {
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     totalPages: PropTypes.number.isRequired,
-    pagesRead: PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
   }).isRequired,
 };
 

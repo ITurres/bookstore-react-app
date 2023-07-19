@@ -8,7 +8,7 @@ const initialState = {
       author: 'John Smith',
       category: 'Fiction',
       totalPages: 200,
-      pagesRead: 50,
+      currentPage: 50,
     },
     {
       item_id: 'item2',
@@ -16,7 +16,7 @@ const initialState = {
       author: 'Leo Tolstoy',
       category: 'Fiction',
       totalPages: 450,
-      pagesRead: 23,
+      currentPage: 23,
     },
     {
       item_id: 'item3',
@@ -24,7 +24,7 @@ const initialState = {
       author: 'Richard Dawkins',
       category: 'Nonfiction',
       totalPages: 500,
-      pagesRead: 145,
+      currentPage: 145,
     },
   ],
 };

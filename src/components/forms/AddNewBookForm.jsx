@@ -23,7 +23,7 @@ const AddNewBookForm = () => {
       author: bookAuthor.current.value,
       category: '',
       totalPages: 100,
-      pagesRead: 0,
+      currentPage: 0,
     };
 
     dispatch(addBook(newBookData));
