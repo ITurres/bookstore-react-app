@@ -1,20 +1,35 @@
 import React, { useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../../redux/books/booksSlice';
 
 const AddNewBookForm = () => {
+  const dispatch = useDispatch();
   const bookTitle = useRef(null);
   const bookAuthor = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const book = {
+  const handleSubmit = () => {
+    const dataEntry = /^\S.*$/;
+
+    if (
+      !dataEntry.test(bookTitle.current.value)
+      || !dataEntry.test(bookAuthor.current.value)
+    ) {
+      return;
+    }
+
+    const newBookData = {
       item_id: crypto.randomUUID(),
       title: bookTitle.current.value,
       author: bookAuthor.current.value,
-      chapter: 'Chapter #',
-      percentage: 10,
+      category: '',
+      totalPages: 100,
+      pagesRead: 0,
     };
-    // ! should do something else with `book`? ===> remove comment when ready
-    return book;
+
+    dispatch(addBook(newBookData));
+
+    bookTitle.current.value = '';
+    bookAuthor.current.value = '';
   };
 
   return (
@@ -27,9 +42,13 @@ const AddNewBookForm = () => {
           className="form-control"
           ref={bookTitle}
         />
-        <input className="form-control" ref={bookAuthor} />
+        <input
+          placeholder="Book Author"
+          className="form-control"
+          ref={bookAuthor}
+        />
         <button
-          type="submit"
+          type="button"
           className="btn btn-primary"
           onClick={handleSubmit}
         >
