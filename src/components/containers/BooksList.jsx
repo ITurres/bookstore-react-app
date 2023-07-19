@@ -7,7 +7,7 @@ const BooksList = () => {
   return (
     <div className="container p-2">
       {books.map((book) => (
-        <BookItem key={book.id} book={book} />
+        <BookItem key={book.item_id} book={book} />
       ))}
     </div>
   );
