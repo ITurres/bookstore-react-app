@@ -8,7 +8,7 @@ import bookStore from './redux/store';
 import reportWebVitals from './reportWebVitals';
 import bookStoreAPI from './services/bookStoreAPI';
 
-if (localStorage.length === 0) {
+if (localStorage.getItem('bookStoreId') === null) {
   bookStoreAPI.setBookStoreId();
 }
 
