@@ -6,6 +6,11 @@ import './styles/index.scss';
 import App from './App';
 import bookStore from './redux/store';
 import reportWebVitals from './reportWebVitals';
+import bookStoreAPI from './services/bookStoreAPI';
+
+if (localStorage.length === 0) {
+  bookStoreAPI.setBookStoreId();
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
