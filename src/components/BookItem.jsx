@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PercentageRing from './utils/PercentageRing';
 import bookStoreAPI from '../services/bookStoreAPI';
 
-const BookItem = ({ book, itemId }) => {
+const BookItem = ({ book }) => {
   const totalPages = Math.floor(Math.random() * 901) + 100;
   const currentPage = Math.floor(Math.random() * (totalPages + 1));
   const percentageRead = Math.round((currentPage / totalPages) * 100);
@@ -23,7 +23,7 @@ const BookItem = ({ book, itemId }) => {
           <button
             type="button"
             className="btn btn-link text-decoration-none"
-            onClick={() => dispatch(bookStoreAPI.deleteBookById(itemId))}
+            onClick={() => dispatch(bookStoreAPI.deleteBookById(book.item_id))}
           >
             Remove
           </button>
@@ -48,11 +48,11 @@ const BookItem = ({ book, itemId }) => {
 
 BookItem.propTypes = {
   book: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
   }).isRequired,
-  itemId: PropTypes.string.isRequired,
 };
 
 export default BookItem;
