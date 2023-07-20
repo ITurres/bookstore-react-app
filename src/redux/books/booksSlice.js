@@ -1,7 +1,9 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import bookStoreAPI from '../../services/bookStoreAPI';
+import bookDataFormatter from '../../components/utils/bookDataFormatter';
 
 const initialState = {
+  books: [],
   isLoading: true,
   error: null,
 };
@@ -9,36 +11,22 @@ const initialState = {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: {
-      reducer: (state) => {
-        state.isLoading = true;
-      },
-
-      prepare: (payload) => payload,
-    },
-    removeBook: {
-      reducer: (state) => {
-        state.isLoading = true;
-      },
-      prepare: (payload) => payload,
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(bookStoreAPI.getBooksList.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.books = action.payload;
+        const formattedDataBooks = Object.keys(action.payload)
+          .map((key) => bookDataFormatter(action.payload[key], key));
+        state.books = [...formattedDataBooks];
       })
       .addCase(bookStoreAPI.postNewBook.fulfilled, (state, action) => {
         state.isLoading = false;
-        const newBook = action.payload;
-        state.books[newBook.item_id] = newBook;
+        state.books.push(action.payload);
       })
       .addCase(bookStoreAPI.deleteBookById.fulfilled, (state, action) => {
         state.isLoading = false;
-        const { payload: bookId } = action;
-        delete state.books[bookId];
+        state.books = state.books.filter((book) => book.item_id !== action.payload);
       })
       .addMatcher(
         isAnyOf(
