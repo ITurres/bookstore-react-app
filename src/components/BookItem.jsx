@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import PercentageRing from './utils/PercentageRing';
-import { removeBook } from '../redux/books/booksSlice';
+import bookStoreAPI from '../services/bookStoreAPI';
 
 const BookItem = ({ book }) => {
-  const percentageRead = Math.round((book.currentPage / book.totalPages) * 100);
+  const totalPages = Math.floor(Math.random() * 901) + 100;
+  const currentPage = Math.floor(Math.random() * (totalPages + 1));
+  const percentageRead = Math.round((currentPage / totalPages) * 100);
+
   const dispatch = useDispatch();
 
   return (
@@ -14,26 +17,17 @@ const BookItem = ({ book }) => {
         <h2>{book.title}</h2>
         <span>{book.author}</span>
         <div className="book-item__actions">
-          <button
-            id={book.item_id}
-            type="button"
-            className="btn btn-link text-decoration-none"
-          >
+          <button type="button" className="btn btn-link text-decoration-none">
             Comments
           </button>
           <button
-            id={book.item_id}
             type="button"
             className="btn btn-link text-decoration-none"
-            onClick={() => dispatch(removeBook(book.item_id))}
+            onClick={() => dispatch(bookStoreAPI.deleteBookById(book.item_id))}
           >
             Remove
           </button>
-          <button
-            id={book.item_id}
-            type="button"
-            className="btn btn-link text-decoration-none"
-          >
+          <button type="button" className="btn btn-link text-decoration-none">
             Edit
           </button>
         </div>
@@ -44,7 +38,7 @@ const BookItem = ({ book }) => {
       <div className="book-item__chapter">
         <span>CURRENT CHAPTER</span>
         <h3>Unknown</h3>
-        <button id={book.item_id} type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-primary">
           UPDATE PROGRESS
         </button>
       </div>
@@ -58,8 +52,6 @@ BookItem.propTypes = {
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    totalPages: PropTypes.number.isRequired,
-    currentPage: PropTypes.number.isRequired,
   }).isRequired,
 };
 

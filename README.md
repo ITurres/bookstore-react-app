@@ -36,7 +36,7 @@
 
 # 📖 Bookstore - React App <a name="about-project"></a>
 
-**Bookstore - React App** An SPA that allows users to display/add/remove books from a list using React + Redux.
+**Bookstore - React App** An SPA that allows users to display/add/remove books from a list using React + Redux and the [Bookstore API](https://microverse.notion.site/Bookstore-API-51ea269061f849118c65c0a53e88a739).
 
 ---
 
@@ -46,12 +46,20 @@
 - Use React components.
 - Use Redux.
 - Use Hooks.
+- Understand the concept of state management.
+- Use store, actions and reducers in React.
+- Connect React and Redux.
+- Connect an existing API via Redux and use the data to display it in a UI.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
   <ul>
+      <li>
+      <img src="https://skillicons.dev/icons?i=redux"/>
+      <a href="https://redux.js.org/">Redux</a>
+    </li>
     <li>
       <img src="https://skillicons.dev/icons?i=react"/>
       <a href="https://react.dev/">React.js</a>
@@ -82,6 +90,7 @@
 
 - **Use of Hooks**
 - **Use of State**
+- **Use of Redux Toolkit**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,9 +139,7 @@ You may also see any lint errors in the console.
 
 ### Run tests
 
-```bash
-  npm test
-```
+- Not Applicable.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -159,7 +166,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **CRUD**
+- [ ] **Styles**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -191,7 +198,7 @@ Give a ⭐ if you liked this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I thank Microverse for this fantastic opportunity, the Code Reviewers for their advice and time 🏆
+I thank Microverse for this fantastic opportunity, the Code Reviewers and [NitBravoA92](https://github.com/NitBravoA92?tab=repositories) for their advice and time 🏆
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/booksSlice';
+import bookStoreAPI from '../../services/bookStoreAPI';
 
 const AddNewBookForm = () => {
   const dispatch = useDispatch();
@@ -21,12 +21,10 @@ const AddNewBookForm = () => {
       item_id: crypto.randomUUID(),
       title: bookTitle.current.value,
       author: bookAuthor.current.value,
-      category: '',
-      totalPages: 100,
-      currentPage: 0,
+      category: 'Unknown',
     };
 
-    dispatch(addBook(newBookData));
+    dispatch(bookStoreAPI.postNewBook(newBookData));
 
     bookTitle.current.value = '';
     bookAuthor.current.value = '';

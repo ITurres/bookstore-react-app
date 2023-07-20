@@ -1,46 +1,54 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import bookStoreAPI from '../../services/bookStoreAPI';
+import bookDataFormatter from '../../components/utils/bookDataFormatter';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-      totalPages: 200,
-      currentPage: 50,
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-      totalPages: 450,
-      currentPage: 23,
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-      totalPages: 500,
-      currentPage: 145,
-    },
-  ],
+  books: [],
+  isLoading: true,
+  error: null,
 };
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      const newBook = action.payload;
-      state.books = [...state.books, newBook];
-    },
-    removeBook: (state, action) => {
-      const bookId = action.payload;
-      state.books = state.books.filter((book) => book.item_id !== bookId);
-    },
+  reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(bookStoreAPI.getBooksList.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const formattedDataBooks = Object.keys(action.payload)
+          .map((key) => bookDataFormatter(action.payload[key], key));
+        state.books = [...formattedDataBooks];
+      })
+      .addCase(bookStoreAPI.postNewBook.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.books.push(action.payload);
+      })
+      .addCase(bookStoreAPI.deleteBookById.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.books = state.books.filter((book) => book.item_id !== action.payload);
+      })
+      .addMatcher(
+        isAnyOf(
+          bookStoreAPI.getBooksList.pending,
+          bookStoreAPI.postNewBook.pending,
+          bookStoreAPI.deleteBookById.pending,
+        ),
+        (state) => {
+          state.isLoading = true;
+        },
+      )
+      .addMatcher(
+        isAnyOf(
+          bookStoreAPI.getBooksList.rejected,
+          bookStoreAPI.postNewBook.rejected,
+          bookStoreAPI.deleteBookById.rejected,
+        ),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        },
+      );
   },
 });
 
