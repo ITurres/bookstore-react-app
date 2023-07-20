@@ -19,7 +19,7 @@ const getBooksList = createAsyncThunk(
       const bookList = await axios.get(
         `${bookstoreBaseURL}apps/${localStorage.getItem('bookStoreId')}/books`,
       );
-      return bookList.data;
+      return bookList.data || [];
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
