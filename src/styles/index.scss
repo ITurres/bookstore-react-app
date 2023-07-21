@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 @import 'variables/_colors.scss';
 @import 'components/utils/PercentageRing.scss';
+@import 'components/Navbar.scss';
 
 body {
-  background-color: $off-white;
+  background-color: $white;
   color: $off-black;
+  font-family: 'Montserrat', sans-serif;
 }
