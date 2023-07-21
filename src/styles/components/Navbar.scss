@@ -1,0 +1,49 @@
+.navbar {
+  background-color: $white;
+  border-bottom: 3px solid $light-gray;
+}
+
+.navbar-items {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 1rem;
+
+  a {
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    color: $gray;
+
+    &:hover {
+      color: $light-blue;
+    }
+  }
+}
+
+.logo-title {
+  display: none;
+  color: $light-blue;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.login-icon {
+  color: $light-blue;
+  border: 1px solid $gray;
+  border-radius: 100%;
+  padding: 0.5rem 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .logo-title {
+    display: block;
+  }
+
+  .navbar-items {
+    flex-direction: row;
+    margin-left: 3rem;
+    gap: 2rem;
+  }
+}

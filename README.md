@@ -166,7 +166,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Styles**
+- **All fulfilled**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

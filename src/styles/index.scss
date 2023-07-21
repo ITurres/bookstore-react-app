@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 @import 'variables/_colors.scss';
 @import 'components/utils/PercentageRing.scss';
+@import 'components/Navbar.scss';
+@import 'components/BookList-and-BookItem.scss';
+@import 'components/forms/AddNewBookForm.scss';
 
 body {
-  background-color: $off-white;
+  background-color: $light-gray;
   color: $off-black;
+  font-family: 'Montserrat', sans-serif;
 }

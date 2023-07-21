@@ -11,20 +11,38 @@ const BooksList = () => {
     dispatch(bookStoreAPI.getBooksList());
   }, [dispatch]);
 
-  if (isLoading) return <div className="container p-2">Loading...</div>;
+  if (isLoading) {
+    return (
+      <div className="error-container container p-2">
+        <h2 className="error-message">Loading...</h2>
+      </div>
+    );
+  }
 
-  if (error) return <div className="container p-2">{error}</div>;
+  if (error) {
+    return (
+      <div className="error-container container p-2">
+        <h2 className="error-message">{error}</h2>
+      </div>
+    );
+  }
 
   if (!books || Object.keys(books).length === 0) {
-    return <div className="container p-2">No books available.</div>;
+    return (
+      <div className="error-container container p-2">
+        <h2 className="error-message">No books available.</h2>
+      </div>
+    );
   }
 
   return (
-    <div className="container p-2">
-      {books.map((book) => (
-        <BookItem key={book.item_id} book={book} />
-      ))}
-    </div>
+    <section className="book-list-section">
+      <div className="book-list container">
+        {books.map((book) => (
+          <BookItem key={book.item_id} book={book} />
+        ))}
+      </div>
+    </section>
   );
 };
 export default BooksList;

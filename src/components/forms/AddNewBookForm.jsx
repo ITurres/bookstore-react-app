@@ -31,29 +31,31 @@ const AddNewBookForm = () => {
   };
 
   return (
-    <div className="container p-2">
-      <h2>Add New Book</h2>
-      <form className="d-flex">
-        <input
-          type="text"
-          placeholder="Book title"
-          className="form-control"
-          ref={bookTitle}
-        />
-        <input
-          placeholder="Book Author"
-          className="form-control"
-          ref={bookAuthor}
-        />
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={handleSubmit}
-        >
-          Add book
-        </button>
-      </form>
-    </div>
+    <section className="form-section">
+      <div className="form-container container p-2">
+        <h2 className="form-title">Add New Book</h2>
+        <form className="d-flex">
+          <input
+            type="text"
+            placeholder="Book title"
+            className="form-control"
+            ref={bookTitle}
+          />
+          <input
+            placeholder="Book Author"
+            className="form-control"
+            ref={bookAuthor}
+          />
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleSubmit}
+          >
+            Add book
+          </button>
+        </form>
+      </div>
+    </section>
   );
 };
 
