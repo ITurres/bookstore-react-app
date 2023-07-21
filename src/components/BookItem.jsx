@@ -13,23 +13,32 @@ const BookItem = ({ book }) => {
   return (
     <div className="book-item">
       <div className="book-item__info">
-        <span>{book.category}</span>
-        <h2>{book.title}</h2>
-        <span>{book.author}</span>
-        <div className="book-item__actions">
-          <button type="button" className="btn btn-link text-decoration-none">
-            Comments
-          </button>
-          <button
-            type="button"
-            className="btn btn-link text-decoration-none"
-            onClick={() => dispatch(bookStoreAPI.deleteBookById(book.item_id))}
-          >
-            Remove
-          </button>
-          <button type="button" className="btn btn-link text-decoration-none">
-            Edit
-          </button>
+        <span className="book-item__category">{book.category}</span>
+        <h2 className="book-item__title">{book.title}</h2>
+        <span className="book-item__author">{book.author}</span>
+        <div className="book-item__actions d-flex mt-3">
+          <div className="button-wrapper">
+            <button
+              type="button"
+              className="btn btn-link comments text-decoration-none"
+            >
+              Comments
+            </button>
+          </div>
+          <div className="button-wrapper">
+            <button
+              type="button"
+              className="btn btn-link text-decoration-none"
+              onClick={() => dispatch(bookStoreAPI.deleteBookById(book.item_id))}
+            >
+              Remove
+            </button>
+          </div>
+          <div>
+            <button type="button" className="btn btn-link text-decoration-none">
+              Edit
+            </button>
+          </div>
         </div>
       </div>
       <div className="book-item__percentage">
