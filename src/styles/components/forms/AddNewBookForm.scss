@@ -1,0 +1,39 @@
+.form-section {
+  background-color: $light-gray;
+  padding-bottom: 2rem;
+
+  .form-container {
+    border-top: 2px solid $gray;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+
+      button {
+        width: 40%;
+      }
+    }
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: $dark-gray;
+    margin: 1.5rem 0;
+    text-align: center;
+
+    @media (min-width: 1000px) {
+      text-align: left;
+    }
+  }
+}
