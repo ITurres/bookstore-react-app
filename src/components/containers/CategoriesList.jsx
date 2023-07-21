@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 
 const CategoriesList = () => (
-  <div className="container categories">
-    <h2>
-      Categories page is being Build. Please go back to
+  <div className="error-container container categories">
+    <h2 className="error-message">
+      Categories page is Under Construction. Please go back to
+      &nbsp;
       <Link to="/">Books</Link>
+      .
     </h2>
   </div>
 );
