@@ -9,7 +9,7 @@ const Navbar = () => (
       <div className="d-flex align-items-center">
         <img src={logo} width="90" height="90" alt="bookstore logo" />
         <h1 className="logo-title m-2">Bookstore CMS</h1>
-        <ul className="navbar-items list-unstyled mb-0 m-2">
+        <ul className="navbar-items list-unstyled mb-0">
           <li className="list-inline-item navbar__item">
             <Link to="/">Books</Link>
           </li>

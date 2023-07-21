@@ -9,6 +9,8 @@
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 600;
+  margin-left: 1rem;
+
   a {
     text-decoration: none;
     letter-spacing: 2.5px;
@@ -41,8 +43,7 @@
 
   .navbar-items {
     flex-direction: row;
-    margin: 2rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
     gap: 2rem;
   }
 }
