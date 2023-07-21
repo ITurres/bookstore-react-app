@@ -7,6 +7,7 @@ const setBookStoreId = async () => {
   try {
     const bookStoreId = await axios.post(`${bookstoreBaseURL}apps/`);
     localStorage.setItem('bookStoreId', bookStoreId.data);
+    return null;
   } catch (error) {
     return error;
   }
