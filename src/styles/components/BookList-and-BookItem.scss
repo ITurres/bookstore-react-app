@@ -1,12 +1,30 @@
 .book-list-section {
   background-color: $light-gray;
+  height: calc(100vh - 200px);
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+    height: 0.7rem;
+    border-radius: 1rem;
+    background-color: $light-gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: $gray;
+  }
+
+  @media (min-width: 1000px) {
+    max-height: calc(100vh - 270px);
+    height: 100%;
+  }
 }
 
 .book-list {
   display: flex;
   flex-direction: column;
   padding: 2.5rem 0.5rem;
-  border-bottom: 2px solid $gray;
   gap: 1.5rem;
 }
 
@@ -30,7 +48,7 @@
   }
 
   .btn-link {
-    padding: 0rem 1.5rem;
+    padding: 0 1.5rem;
   }
 
   .book-item__actions {
