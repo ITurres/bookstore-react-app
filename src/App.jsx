@@ -9,8 +9,11 @@ const App = () => (
   <>
     <Header />
     <Routes>
-      <Route path="/" element={<BooksList />} />
-      <Route path="/categories" element={<CategoriesList />} />
+      <Route path="/bookstore-react-app/" element={<BooksList />} />
+      <Route
+        path="/bookstore-react-app/categories"
+        element={<CategoriesList />}
+      />
     </Routes>
     <AddNewBookForm />
   </>

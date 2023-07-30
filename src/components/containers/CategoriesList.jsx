@@ -5,7 +5,7 @@ const CategoriesList = () => (
     <h2 className="error-message">
       Categories page is Under Construction. Please go back to
       &nbsp;
-      <Link to="/">Books</Link>
+      <Link to="/bookstore-react-app/">Books</Link>
       .
     </h2>
   </div>

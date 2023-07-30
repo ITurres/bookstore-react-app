@@ -11,10 +11,10 @@ const Navbar = () => (
         <h1 className="logo-title m-2">Bookstore CMS</h1>
         <ul className="navbar-items list-unstyled mb-0">
           <li className="list-inline-item navbar__item">
-            <Link to="/">Books</Link>
+            <Link to="/bookstore-react-app/">Books</Link>
           </li>
           <li className="list-inline-item navbar__item">
-            <Link to="/categories">Categories</Link>
+            <Link to="/bookstore-react-app/categories">Categories</Link>
           </li>
         </ul>
       </div>
