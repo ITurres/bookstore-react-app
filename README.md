@@ -100,7 +100,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[bookstore-cms.com](https://bookstore-cms-mxhm.onrender.com/)
+- [Live Demo Link](https://iturres.github.io/bookstore-react-app/)
 
 ---
 
